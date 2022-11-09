@@ -1,0 +1,46 @@
+name: mirea_db
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <3.3.4'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.5
+  provider: ^6.0.4
+  logger: any  #for logging purpose
+  image_picker: ^0.8.5+3
+  sqflite: ^2.1.0
+  firebase_core: ^1.24.0
+  firebase_auth: ^3.11.2
+  cloud_firestore: ^3.5.1
+  form_inputs:
+    path: packages/form_inputs
+  mockito: ^5.3.2
+  firebase_auth_mocks: ^0.8.7
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  retrofit_generator: '>=4.0.0 <5.0.0'
+  json_serializable: '>4.4.0'
+  flutter_lints: ^2.0.0
+  build_runner: ^2.3.2
+
+flutter:
+  uses-material-design: true
+  fonts:
+      - family: Montserrat
+        fonts:
+          - asset: assets/fonts/Montserrat-Regular.ttf
+          - asset: assets/fonts/Montserrat-Bold.ttf
+            weight: 700
+      - family: PricedownBl
+        fonts:
+          - asset: assets/fonts/PricedownBl-Regular-900.ttf
+  assets:
+     - assets/5eafc6086fe6a171de9d910a.png    
