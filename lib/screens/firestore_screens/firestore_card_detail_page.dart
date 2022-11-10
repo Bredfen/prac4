@@ -48,8 +48,9 @@ class _FireStoreCardDetailState extends State<FireStoreCardDetail> {
 
     return Scaffold(
       appBar: AppBar(
-        title:
-            Text(widget.firestorePos == null ? 'Добавить' : 'Редактировать', style: TextStyle( fontWeight: FontWeight.bold, fontFamily: "PricedownBl")),
+        title: Text(widget.firestorePos == null ? 'Добавить' : 'Редактировать',
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontFamily: "PricedownBl")),
         centerTitle: true,
       ),
       body: Padding(
@@ -64,7 +65,8 @@ class _FireStoreCardDetailState extends State<FireStoreCardDetail> {
                 decoration: InputDecoration(
                   //hintText: 'Введите название',
                   labelText: 'Название',
-                  labelStyle: TextStyle( fontWeight: FontWeight.bold, fontFamily: "PricedownBl"),
+                  labelStyle: TextStyle(
+                      fontWeight: FontWeight.bold, fontFamily: "PricedownBl"),
                   border: const OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.white,
@@ -88,7 +90,8 @@ class _FireStoreCardDetailState extends State<FireStoreCardDetail> {
                 decoration: InputDecoration(
                   //hintText: 'Введите описание',
                   labelText: 'Описание',
-                  labelStyle: TextStyle( fontWeight: FontWeight.bold, fontFamily: "PricedownBl"),
+                  labelStyle: TextStyle(
+                      fontWeight: FontWeight.bold, fontFamily: "PricedownBl"),
                   border: const OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.white,
@@ -113,7 +116,8 @@ class _FireStoreCardDetailState extends State<FireStoreCardDetail> {
                 controller: priceController,
                 decoration: const InputDecoration(
                   labelText: 'Цена',
-                  labelStyle: TextStyle( fontWeight: FontWeight.bold, fontFamily: "PricedownBl"),
+                  labelStyle: TextStyle(
+                      fontWeight: FontWeight.bold, fontFamily: "PricedownBl"),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.white,
@@ -150,10 +154,11 @@ class _FireStoreCardDetailState extends State<FireStoreCardDetail> {
                       );
                       try {
                         if (widget.firestorePos == null) {
-                          await FireStoreHelper.addFireStorePos(model, 'Pos');
+                          await FireStoreHelper.addFireStorePos(
+                              model, 'DrugPos');
                         } else {
                           await FireStoreHelper.updateFireStorePos(
-                              model, widget.docId.toString(), 'Pos');
+                              model, widget.docId.toString(), 'DrugPos');
                         }
                       } catch (e) {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -177,7 +182,10 @@ class _FireStoreCardDetailState extends State<FireStoreCardDetail> {
                       widget.firestorePos == null
                           ? 'Сохранить'
                           : 'Редактировать',
-                      style: TextStyle( fontWeight: FontWeight.bold, fontFamily: "PricedownBl", fontSize: 20),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "PricedownBl",
+                          fontSize: 20),
                     )),
               ),
             )

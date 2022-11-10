@@ -29,8 +29,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ? AppBar(
               backgroundColor: Color.fromARGB(255, 0, 0, 0),
               automaticallyImplyLeading: false,
-              title: const Text('Dark Market',style: TextStyle(fontFamily: "PricedownBl"),),
-              
+              title: const Text(
+                'Dark Market',
+                style: TextStyle(fontFamily: "PricedownBl"),
+              ),
               centerTitle: true,
               actions: <Widget>[
                 IconButton(
@@ -49,16 +51,21 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Color.fromARGB(255, 0, 0, 0),
               automaticallyImplyLeading: false,
               title: const Text('Dark Market',
-              style: TextStyle(fontFamily: 'PricedownBl',
-                            fontWeight: FontWeight.bold)),
+                  style: TextStyle(
+                      fontFamily: 'PricedownBl', fontWeight: FontWeight.bold)),
               centerTitle: true,
               actions: [
-            IconButton(onPressed: (){},
-             icon:CircleAvatar(child: Image.asset('assets/5eafc6086fe6a171de9d910a.png', ),
-              backgroundColor: Color.fromARGB(200, 0, 0, 0),),),
-          ],
-              
-    ),
+                IconButton(
+                  onPressed: () {},
+                  icon: CircleAvatar(
+                    child: Image.asset(
+                      'assets/5eafc6086fe6a171de9d910a.png',
+                    ),
+                    backgroundColor: Color.fromARGB(200, 0, 0, 0),
+                  ),
+                ),
+              ],
+            ),
       floatingActionButton: _currentIndex != 2 &&
               context.select((String string) => string == roleAdmin)
           ? FloatingActionButton.extended(
@@ -68,22 +75,29 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(
                     builder: (context) => _currentIndex == 0
                         ? const CardDetail()
-                        : (const FireStoreCardDetail.createNewDetail('Pos')),
+                        : (const FireStoreCardDetail.createNewDetail(
+                            'DrugPos')),
                   ),
                 ).then((_) => {
                       setState(() {}),
                     });
               },
-              label: const Text('Добавить',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-              icon: const Icon(Icons.add, color: Colors.white,),
+              label: const Text('Добавить',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              icon: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
               backgroundColor: Colors.black,
             )
           : null,
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
-        selectedLabelStyle: TextStyle(color: Colors.white,fontFamily: 'PricedownBl'),
-        
+        selectedLabelStyle:
+            TextStyle(color: Colors.white, fontFamily: 'PricedownBl'),
+
         fixedColor: Colors.white,
         onTap: (value) {
           // Respond to item press.
@@ -97,7 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           const BottomNavigationBarItem(
             label: 'FIRESTORE',
-            
             icon: Icon(Icons.local_fire_department),
           ),
           const BottomNavigationBarItem(
