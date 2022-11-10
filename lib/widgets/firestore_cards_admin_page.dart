@@ -6,7 +6,7 @@ import 'package:mirea_db/services/firestore_crud_helper.dart';
 
 Widget firestoreCardsAdminPage() {
   return StreamBuilder(
-    stream: FireStoreHelper.getAllFirestorePos('Pos')
+    stream: FireStoreHelper.getAllFirestorePos('DrugPos')
         .snapshots(), //build connection
     builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
       if (streamSnapshot.hasData) {
@@ -41,8 +41,12 @@ Widget firestoreCardsAdminPage() {
                             context: context,
                             builder: (context) {
                               return AlertDialog(
-                                title:
-                                    const Text('Уверены, что хотите удалить?', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "PricedownBl")),
+                                title: const Text(
+                                    'Уверены, что хотите удалить?',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: "PricedownBl")),
                                 actions: [
                                   ElevatedButton(
                                     style: ButtonStyle(
@@ -52,15 +56,23 @@ Widget firestoreCardsAdminPage() {
                                     onPressed: () async {
                                       await FireStoreHelper.deleteFireStorePos(
                                           documentSnapshot.id.toString(),
-                                          'Pos');
+                                          'DrugPos');
                                       // ignore: use_build_context_synchronously
                                       Navigator.pop(context);
                                     },
-                                    child: const Text('Да', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "PricedownBl")),
+                                    child: const Text('Да',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: "PricedownBl")),
                                   ),
                                   ElevatedButton(
                                     onPressed: () => Navigator.pop(context),
-                                    child: const Text('Нет', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "PricedownBl")),
+                                    child: const Text('Нет',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: "PricedownBl")),
                                   ),
                                 ],
                               );
